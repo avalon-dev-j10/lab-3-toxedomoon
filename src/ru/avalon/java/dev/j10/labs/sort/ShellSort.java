@@ -1,6 +1,6 @@
 package ru.avalon.java.dev.j10.labs.sort;
 
-import ru.avalon.java.dev.j10.labs.Sort;
+import ru.avalon.java.dev.j10.labs.*;
 
 /**
  * Сортировка Шелла (англ. Shell sort).
@@ -17,12 +17,22 @@ import ru.avalon.java.dev.j10.labs.Sort;
  */
 public class ShellSort implements Sort {
 
+    private Sort selectionSort = new SelectionSort();
     /**
      * {@inheritDoc}
      */
+    @Override
     public void sort(int[] array) {
+        int d = array.length / 2; // разбивка массива на промежутки
+        while (d >= 1) {
+            for (int i = 0; i < d; i++) {
+                selectionSort.sort(array);
+            }
+            d /= 2;
+        }
+        }
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
     }
-}
+
