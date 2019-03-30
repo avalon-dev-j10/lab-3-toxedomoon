@@ -1,10 +1,99 @@
 package ru.avalon.java.dev.j10.labs;
 
+import ru.avalon.java.dev.j10.labs.initialization.*;
+import ru.avalon.java.dev.j10.labs.sort.BubbleSort;
+import ru.avalon.java.dev.j10.labs.sort.SelectionSort;
+import ru.avalon.java.dev.j10.labs.sort.ShellSort;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] array;
+        int[] array = new int[20]; 
+        //Создать массив из 20 целых чисел и адресовать его с сохранить ссылку
+        //в переменную array Создать массив из 20 целых чисел и адресовать его 
+        //сохранить ссылку в переменную array.
+        
+        FibonacciInitializer fibo = new FibonacciInitializer();
+        
+        fibo.initialize(array);
+        
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        
+        int sum=0;
+        
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+            
+        }
+        
+        System.out.println(sum + "\n");
+        
+        RandomInitializer rand = new RandomInitializer();
+        
+        rand.initialize(array);
+        
+        System.out.println("");
+        
+        System.out.println("Сортирую массив с использованием метода пузырьковой сортировки:"
+                + "\n");
+        
+        BubbleSort bubbleSort = new BubbleSort();
+        
+        bubbleSort.sort(array);
+        
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        
+        System.out.println("Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:"
+                + "\n"
+        );
+        
+        array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ((int) (Math.random() * 100) - 50);
+            System.out.println(array[i] + " ");
+        }
+        
+        System.out.println("");
+        
+        SelectionSort sSort = new SelectionSort();
+        
+        sSort.sort(array);
+        
+        System.out.println("Сортирую массив с использованием метода сортировки выбором:"
+                + "\n");
+        
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i] + " ");
+        }
+        System.out.println("Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:"
+                    + "\n");
+            
+        array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ((int) (Math.random() * 100) - 50);
+            System.out.println(array[i] + " ");
+        }  
+        
+        System.out.println("");
+        
+        
+        ShellSort shellSort = new ShellSort();
+        shellSort.sort(array);
+        
+            System.out.println("Сортировка расческой:");
+        
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i] + " ");
+            }
+            
+    }
+}
 
+        
 	    /*
 	     * TODO(Студент): Выполнить действия над массивом чисел
 	     *
@@ -34,5 +123,4 @@ public class Main {
          * 8. Отсортировать массив с использованием
          *    сортировки Шелла.
 	     */
-    }
-}
+
