@@ -17,18 +17,26 @@ public class Main {
         
         fibo.initialize(array);
         
+        System.out.println("\n" + "Последовательность чисел Фибоначчи::"
+                + "\n");
+
+        
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
         
+        System.out.println("");
+        
         int sum=0;
+        
+        System.out.println("\n" + "Сумма чисел Фибоначчи::"
+                + "\n");
         
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
-            
+            System.out.print(sum + " ");
         }
         
-        System.out.println(sum + "\n");
         
         RandomInitializer rand = new RandomInitializer();
         
@@ -36,7 +44,7 @@ public class Main {
         
         System.out.println("");
         
-        System.out.println("Сортирую массив с использованием метода пузырьковой сортировки:"
+        System.out.println("\n" + "Сортирую массив с использованием метода пузырьковой сортировки:"
                 + "\n");
         
         BubbleSort bubbleSort = new BubbleSort();
@@ -47,14 +55,15 @@ public class Main {
             System.out.print(array[i] + " ");
         }
         
-        System.out.println("Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:"
-                + "\n"
-        );
+        System.out.println("");
         
-        array = new int[100];
+        System.out.print("\n" + "Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:"
+                + "\n");
+        
+        array = new int[20];
         for (int i = 0; i < array.length; i++) {
             array[i] = ((int) (Math.random() * 100) - 50);
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
         }
         
         System.out.println("");
@@ -63,19 +72,21 @@ public class Main {
         
         sSort.sort(array);
         
-        System.out.println("Сортирую массив с использованием метода сортировки выбором:"
+        System.out.println("\n" + "Сортирую массив с использованием метода сортировки выбором:"
                 + "\n");
         
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
         }
-        System.out.println("Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:"
-                    + "\n");
+        
+        System.out.println("");
+        
+        System.out.print("\n" + "Формирую массив последовательностью случайных чисел в диапазоне от -50 до 50:" + "\n");
             
-        array = new int[100];
+        array = new int[20];
         for (int i = 0; i < array.length; i++) {
             array[i] = ((int) (Math.random() * 100) - 50);
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
         }  
         
         System.out.println("");
@@ -87,7 +98,7 @@ public class Main {
             System.out.println("Сортировка расческой:");
         
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
             }
             
     }
